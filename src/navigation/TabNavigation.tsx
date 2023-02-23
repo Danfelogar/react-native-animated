@@ -3,8 +3,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Platform } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import { AnimatedSwitch, LoadingAnimation, RingIndicatorPhone } from '../screens';
+import { AnimatedSwitch, CarouselAnimation, GalleryView, LoadingAnimation, RingIndicatorPhone, ScrollAnimationEffect } from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,6 +55,39 @@ export const TabNavigation = () => {
                     tabBarLabel: 'AnimatedSwitch',
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="switch" color={color} size={size} />
+                    )
+                }}
+            />
+
+            <Tab.Screen
+                name="GalleryView"
+                component={GalleryView}
+                options={{
+                    tabBarLabel: 'GalleryView',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="view-gallery-outline" color={color} size={size} />
+                    )
+                }}
+            />
+
+            <Tab.Screen
+                name="ScrollAnimationEffect"
+                component={ScrollAnimationEffect}
+                options={{
+                    tabBarLabel: 'ScrollAnimationEffect',
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesome5 name="scroll" color={color} size={size} />
+                    )
+                }}
+            />
+
+            <Tab.Screen
+                name="CarouselAnimation"
+                component={CarouselAnimation}
+                options={{
+                    tabBarLabel: 'CarouselAnimation',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="view-carousel-outline" color={color} size={size} />
                     )
                 }}
             />
