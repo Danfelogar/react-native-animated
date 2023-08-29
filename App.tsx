@@ -1,28 +1,24 @@
-import 'react-native-reanimated'
-import 'react-native-gesture-handler'
+import 'react-native-reanimated';
+import 'react-native-gesture-handler';
 
 import React from 'react';
+import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {TabNavigation} from './src/navigation';
-import { View } from 'react-native';
+import {DrawerNavigation} from './src/navigation';
 
 const App = () => {
   return (
     <AppState>
       <NavigationContainer>
-        <TabNavigation />
+        <DrawerNavigation />
       </NavigationContainer>
     </AppState>
   );
 };
 
 const AppState = ({children}: {children: JSX.Element | JSX.Element[]}) => {
-  return (
-    <View style={{ flex: 1 }}>
-      {children}
-    </View>
-  );
+  return <View style={{flex: 1}}>{children}</View>;
 };
 
 export default App;
